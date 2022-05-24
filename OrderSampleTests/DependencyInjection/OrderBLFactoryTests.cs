@@ -1,5 +1,6 @@
 ﻿using BL;
 using DAL;
+using DAL.Contracts;
 using DISample.DependencyInjection;
 using Moq;
 using System;
@@ -13,7 +14,7 @@ namespace OrderSampleTests.DependencyInjection
 
         public OrderBLFactoryTests()
         {
-            var dal = new Mock<OrderDAL>();
+            var dal = new Mock<IOrderDAL>();
             sut = new OrderBLFactory(dal.Object);
         }
 
